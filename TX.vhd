@@ -5,9 +5,9 @@ use IEEE.NUMERIC_STD.ALL;
 entity TX is
 generic(sel  : STD_LOGIC_VECTOR(2 downto 0));
 port(Clk     : IN  STD_LOGIC;
-	  TX_LINE : OUT STD_LOGIC;
-	  TX_DATA : IN  STD_LOGIC_VECTOR(7 downto 0);
-	  TX_BUSY : OUT STD_LOGIC);
+     TX_LINE : OUT STD_LOGIC;
+     TX_DATA : IN  STD_LOGIC_VECTOR(7 downto 0);
+     TX_BUSY : OUT STD_LOGIC);
 end entity;
 
 architecture TX_arc OF TX IS
@@ -23,13 +23,13 @@ begin
 with (Sel) select
 PRSCLVal <= 41600 when "000",  --  1200--
             20800 when "001",  --  2400--
-			   10400 when "010",  --  4800-- 
-			   5200  when "011",  --  9600--
-				2600  when "100",  -- 19200--
-				1300  when "101",  -- 38400--
-				866   when "110",  -- 57600--
-				432   when "111",  --115200--
-			   5200  when others; 
+            10400 when "010",  --  4800-- 
+            5200  when "011",  --  9600--
+            2600  when "100",  -- 19200--
+            1300  when "101",  -- 38400--
+            866   when "110",  -- 57600--
+            432   when "111",  --115200--
+            5200  when others; 
 
 TX_proc: process(Clk)
 begin
