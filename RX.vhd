@@ -15,20 +15,20 @@ signal DATAFLL	  :  STD_LOGIC_VECTOR(9 downto 0);
 signal RX_FLG	  :  STD_LOGIC := '0';
 signal PRSCL	  :  INTEGER RANGE 0 TO 5208 := 0;
 signal INDEX	  :  INTEGER RANGE 0  TO 9 := 0;
-signal PRSCLVal  :  INTEGER range 0 to 41600;
+signal PRSCLVal   :  INTEGER range 0 to 41600;
 
 begin
 
 with (Sel) select
 PRSCLVal <= 41600 when "000",  --  1200--
             20800 when "001",  --  2400--
-			   10400 when "010",  --  4800-- 
-			   5200  when "011",  --  9600--
-				2600  when "100",  -- 19200--
-				1300  when "101",  -- 38400--
-				866   when "110",  -- 57600--
-				432   when "111",  --115200--
-			   5200  when others; 
+            10400 when "010",  --  4800-- 
+            5200  when "011",  --  9600--
+            2600  when "100",  -- 19200--
+            1300  when "101",  -- 38400--
+            866   when "110",  -- 57600--
+            432   when "111",  --115200--
+            5200  when others; 
 
 rx_proc: process(Clk)
 begin
