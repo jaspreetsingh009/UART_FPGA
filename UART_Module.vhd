@@ -5,8 +5,8 @@ use IEEE.NUMERIC_STD.ALL;
 entity UART_Module is
 port( Clk     : IN  STD_LOGIC;
       RX_LINE : IN  STD_LOGIC;
-	    TX_LINE : OUT STD_LOGIC;
-		  RX_BUSY : OUT STD_LOGIC;
+      TX_LINE : OUT STD_LOGIC;
+      RX_BUSY : OUT STD_LOGIC;
       TX_BUSY : OUT STD_LOGIC);
 end entity;
  
@@ -15,9 +15,9 @@ architecture UART_arc of UART_Module is
 component TX is
 generic(sel  : STD_LOGIC_VECTOR(2 downto 0));
 port(Clk     : IN  STD_LOGIC;
-	   TX_LINE : OUT STD_LOGIC;
-	   TX_DATA : IN  STD_LOGIC_VECTOR(7 downto 0);
-	   TX_BUSY : OUT STD_LOGIC);
+     TX_LINE : OUT STD_LOGIC;
+     TX_DATA : IN  STD_LOGIC_VECTOR(7 downto 0);
+     TX_BUSY : OUT STD_LOGIC);
 end component;
  
 component RX is
